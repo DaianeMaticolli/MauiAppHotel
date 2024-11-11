@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#40e0d0">
+    <!-- Turquesa para fundo principal -->
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10" Spacing="10">
+
+        <Label Text="Cálculo da Diária"
+               FontFamily="Abadi Extra Light"
+               FontSize="50"
+               TextColor="#333333" />
+        <!-- Cinza escuro para contraste de texto -->
+
+        <Frame Padding="10" BackgroundColor="#40e0d0">
+             <VerticalStackLayout>
+                <Border
+                    StrokeThickness="5"
+                    Stroke="#ffa07a" 
+                    BackgroundColor="#40e0d0"
+                    Padding="0"
+                    StrokeShape="RoundRectangle 10">
+
+                    <Grid RowDefinitions="Auto, Auto" BackgroundColor="#40e0d0"
+                          ColumnDefinitions="*, *, 2*">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Adultos:"
+                               FontFamily="Abadi Extra Light"
+                               TextColor="#333333" />
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               TextColor="#FFFFFF" 
+                            FontFamily="Abadi Extra Light"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}"/>
+
+                            <Stepper Grid.Row="0" Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
+
+                            <Label Grid.Row="1" Grid.Column="0" 
+                               Text="Crianças:"
+                               FontFamily="Abadi Extra Light"
+                               TextColor="#333333" />
+
+                            <Label Grid.Row="1" Grid.Column="1"
+                               TextColor="#FFFFFF"
+                               FontFamily="Abadi Extra Light"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}"/>
+
+                            <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
+                    </Grid>
+                </Border>
+
+
+                <Frame Padding="10" Margin="10" BackgroundColor="#ffa07a">
+                 
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               FontFamily="Abadi Extra Light"
+                               TextColor="#FFFFFF"/>
+
+                        <Picker x:Name="pck_quarto"                              
+                                Title="Selecione sua Acomodação" TitleColor="#FFFFFF"
+                                ItemDisplayBinding="{Binding Descricao}"
+                                TextColor="#FFFFFF"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10" BackgroundColor="#ffa07a"
+                       Margin="10">
+                                     <VerticalStackLayout Spacing="10">
+
+                        <Label Text="Período da Estadia"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               FontFamily="Abadi Extra Light"
+                               TextColor="#FFFFFF"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:"
+                                   FontFamily="Abadi Extra Light"
+                                   TextColor="#333333"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkin_DateSelected"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:"
+                                   FontFamily="Abadi Extra Light"
+                                   TextColor="#333333"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <Button Text="Avançar"  
+                        BackgroundColor="#ffa07a" 
+                    TextColor="#FFFFFF"
+                        FontFamily="Abadi Extra Light"
+                        Margin="10"
+                        Clicked="Button_Clicked1"/>
+
+                    <Button Text="Sobre"  
+                        BackgroundColor="#ffa07a"
+                        TextColor="#FFFFFF"
+                        FontFamily="Abadi Extra Light"
+                        Margin="10"
+                        Clicked="Button_Clicked2"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>

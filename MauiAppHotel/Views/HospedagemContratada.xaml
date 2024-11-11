@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#EAF6F6">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"  Padding="10" Spacing="10">
+
+        <Label Text="Suite Super Luxo"
+               TextColor="#3B3B3B"
+            FontFamily="Abadi Extra Light"
+               FontSize="50"
+               HorizontalTextAlignment="Center"/>
+
+            <Frame Padding="10" BackgroundColor="#40E0D0">
+                <VerticalStackLayout>
+
+                    <Frame Margin="10" BackgroundColor="#FFA500">
+                        <VerticalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Adultos:" FontFamily="Abadi Extra Light" TextColor="#FFFFFF"/>
+                                   <Label Text="2" TextColor="#FFFFFF" FontFamily="Abadi Extra Light"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Crianças:" FontFamily="Abadi Extra Light" TextColor="#FFFFFF"/>
+                                <Label Text="2" TextColor="#FFFFFF" FontFamily="Abadi Extra Light"/>
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame Margin="10" BackgroundColor="#FFA500">
+                        <Grid ColumnDefinitions="*, *, *"
+                          RowDefinitions="Auto, Auto">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Check-in" FontFamily="Abadi Extra Light"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Check-out" FontFamily="Abadi Extra Light"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Estadia" FontFamily="Abadi Extra Light"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="10/11/24" FontFamily="Abadi Extra Light"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="10/12/24" FontFamily="Abadi Extra Light"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="30" FontFamily="Abadi Extra Light"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Margin="10" BackgroundColor="#FFA500">
+                           <HorizontalStackLayout>
+                            <Label Text="Valor Total:" FontFamily="Abadi Extra Light" TextColor="#FFFFFF"/>
+                            <Label Text="R$ 750,00" FontFamily="Abadi Extra Light" TextColor="#FFFFFF"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+
+                    <Button Text="Voltar"  
+                        TextColor="#FFFFFF" 
+                        BackgroundColor="#40E0D0"
+                                   FontFamily="Abadi Extra Light"
+                        HorizontalOptions="Center"
+                        Clicked="Button_Clicked"/>
+
+                </VerticalStackLayout>
+            </Frame>
+    </VerticalStackLayout>
+</ContentPage>
